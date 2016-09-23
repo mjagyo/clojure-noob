@@ -1,7 +1,5 @@
 (ns clojure-noob.house
 	(:gen-class))
 
-(defn fromhouse
-	"This should be fucking called"
-	[]
+(defn fromhouse []
 	(println "from house"))
