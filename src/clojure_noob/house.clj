@@ -1,5 +1,8 @@
 (ns clojure-noob.house
 	(:gen-class))
 
-(defn fromhouse []
+(defn house []
 	(println "from house"))
+
+(defn forest []
+	(println "going to forest"))
