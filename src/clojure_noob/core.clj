@@ -21,6 +21,17 @@
 		}
 	})
 
+(defn go
+	"Go to specific place"
+	[adv tmap]
+	(println "function go")
+	(if (= (get-in adv [:location] :forest))
+		(println "ddd")
+		)
+	; (println adv)
+	; (println tmap)
+	)
+
 (def the-map
 	{
 		:house {
@@ -56,10 +67,9 @@
 		What do you do ? 
 		")
 	(println "Please select an event below.")
-	(println "[1] Go to forest.")
-	(println "[2] Stay in the house.")
-	(let [n (read-line)])
-		; (if (= n "1")
-		; 	)
-	(let  [curr_location (adventurer :location)]
-		(println (get-in the-map [curr_location]))))
+	(println "[forest] Go to forest.")
+	(println "[house] Stay in the house.")
+	(let [n (str (read-line))
+		adv' (assoc-in adventurer [:location] (keyword n))]
+		(let  [curr_location (adv' :location)]
+			(go adv' (get-in the-map [curr_location])))))
